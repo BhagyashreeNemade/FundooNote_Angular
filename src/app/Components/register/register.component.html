@@ -1,61 +1,68 @@
-<div class="head">
-    <h1>
-        <span style="color: blue;">F</span>
-        <span style="color: red;">u</span>
-        <span style="color: yellow;">n</span>
-        <span style="color: green;">d</span>
-        <span style="color: red;">o</span>
-        <span style="color: blue;">o</span>
-    </h1>
-</div>
-<h1>Create your FundooNote Account</h1>
-<div class="name">
-    <mat-form-field appearance="outline">
-          <mat-label>First Name</mat-label>
-         <input matInput placeholder="">
-         <mat-error>add valid first name</mat-error>
-    </mat-form-field>
-    <mat-form-field appearance="outline">
-        <mat-label>Last Name</mat-label>
-        <input matInput placeholder="">
-        <mat-error>add valid last name</mat-error>
-    </mat-form-field>
-</div>
-<div class="username">
-    <mat-form-field appearance="outline">
-        <mat-label>Username</mat-label>
-        <input matInput placeholder="">
-        <mat-error>add valid email</mat-error>
-        <mat-hint style="font: size 10px;">You can use letters,numbers & periods</mat-hint>
-    </mat-form-field>
-<a style="color:#3f51b5;font-weight: 500;">Use my current email address instead</a>
-</div>
-<div class="password">
-    <mat-form-field appearance="outline">
-        <mat-label>Password</mat-label>
-        <input type="password" matInput placeholder="">
-        <mat-error>add valid passward</mat-error>
-    </mat-form-field>
-
-    <mat-form-field appearance="outline">
-        <mat-label>Confirm</mat-label>
-        <input type="password" matInput placeholder="">
-        <mat-error>add valid confirm passward</mat-error>
-    </mat-form-field>
-</div>
-<div style="font-size: small; margin-top:-10px">
-    <mat-hint style="font: size 50px;">Use 8 or more characters with a mix of letters numbers & symbols
-    </mat-hint>
-<div class="checkbox-show-password">
-     <mat-checkbox>Show Password</mat-checkbox>
-</div>
-
-<div class="submit-button">
-    <a>Sign in Insted</a>
-     <button mat-raised-button style="background-color: rgb(54, 148, 224); text-align: center;color: white ;border: none;">Submit</button>
-</div>
-<div>
-<img src="../../../assets/account.svg" width="240" height="240">
-<p>One Account.All
-    FundooNote working for you</p>
+<div fxFlex="100" fxFlex.xs=100 fxLayout='column' fxLayoutAlign='center center' fxLayout.xs="100" fxLayout.xs="column"
+    style="padding: 15px;border:2px solid #d5d1d1;margin: 10px  22%;border: radius 5px;display:block;border-radius: 10px;">
+    <div fxLayout="row" fxLayoutAlign="center center" fxFlex="100" style="padding: 8%; ">
+        <form fxFlex="95">
+            <div fxLayout="column" fxLayoutAlign="center">
+                <div class="head">
+                    <h1>
+                        <span style="color: blue;">F</span>
+                        <span style="color: red;">u</span>
+                        <span style="color: yellow;">n</span>
+                        <span style="color: green;">d</span>
+                        <span style="color: red;">o</span>
+                        <span style="color: blue;">o</span>
+                    </h1>
+                    <h1>Create your FundooNote Account</h1>
+                </div>
+                <div class="name" fxLayoutGap="20px" fxLayout="row" fxLayout.xs="column">
+                    <mat-form-field appearance="outline" fxFlex="100">
+                        <mat-label>First Name</mat-label>
+                        <input matInput placeholder="">
+                        <mat-error>add valid first name</mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" fxFlex="100">
+                        <mat-label>Last Name</mat-label>
+                        <input matInput placeholder="">
+                        <mat-error>add valid last name</mat-error>
+                    </mat-form-field>
+                </div>
+                <div fxLayout="column" fxLayoutAlign="centre">
+                    <mat-form-field appearance="outline" fxFlex="100">
+                        <mat-label>Username</mat-label>
+                        <input matInput placeholder="">
+                        <mat-error>add valid email</mat-error>
+                        <mat-hint style="font: size 10px;">You can use letters,numbers & periods</mat-hint>
+                    </mat-form-field>
+                </div>
+                <div fxLayoutGap="20px" fxLayout="row"fxLayout.xs="column">
+                    <mat-form-field appearance="outline" fxFlex="100">
+                        <mat-label>Password</mat-label>
+                        <input type="password" matInput placeholder="">
+                        <mat-error>add valid passward</mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" fxFlex="100">
+                        <mat-label>Confirm</mat-label>
+                        <input type="password" matInput placeholder="">
+                        <mat-error>add valid confirm passward</mat-error>
+                    </mat-form-field>
+                </div>
+                <div style="font-size: small; margin-top:-10px">
+                    <mat-hint style="font: size 50px;">Use 8 or more characters with a mix of letters numbers & symbols
+                    </mat-hint>
+                </div>
+                <div class="checkbox-show-password" style="padding-top: 23px;">
+                    <mat-checkbox>Show Password</mat-checkbox>
+                </div>
+                <div class="submit-button" style="padding-top: 40px;">
+                    <button mat-stroked-button style="border: none;color:rgb(54, 148, 224);">Sign in instead</button>
+                    <button mat-raised-button style="background-color: rgb(54, 148, 224); text-align: center;color: white ;border: none; float: right;">Submit</button>
+                </div>
+            </div>
+        </form>
+        <div fxLayout="column" fxLayoutAlign="center center" style=" margin-left: 15px;height: 400px;margin-top: 20px;" fxHide.xs>
+            <img src="../../../assets/account.svg" width="240" height="240">
+            <p>One Account.All
+            FundooNote working for you</p>
+        </div>
+    </div>
 </div>
