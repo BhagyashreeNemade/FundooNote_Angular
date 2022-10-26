@@ -10,7 +10,7 @@ const routes: Routes = [
    {path:'login',component:LoginComponent},
 
 {path:'forget-pass',component:ForgetPasswordComponent},
-{path:'reset-password/:token',component:ResetPasswordComponent}];
+{path:'reset-password',component:ResetPasswordComponent}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
