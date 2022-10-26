@@ -1,7 +1,7 @@
 <div fxFlex="100" fxFlex.xs=100 fxLayout='column' fxLayoutAlign='center center' fxLayout.xs="100" fxLayout.xs="column"
     style="padding: 15px;border:2px solid #d5d1d1;margin: 10px  22%;border: radius 5px;display:block;border-radius: 10px;">
     <div fxLayout="row" fxLayoutAlign="center center" fxFlex="100" style="padding: 8%; ">
-        <form fxFlex="95">
+        <form [formGroup]="registerForm" fxFlex="95" (ngSubmit)="onSubmit()">
             <div fxLayout="column" fxLayoutAlign="center">
                 <div class="head">
                     <h1>
@@ -17,19 +17,19 @@
                 <div class="name" fxLayoutGap="20px" fxLayout="row" fxLayout.xs="column">
                     <mat-form-field appearance="outline" fxFlex="100">
                         <mat-label>First Name</mat-label>
-                        <input matInput placeholder="">
+                        <input matInput formControlName="firstName" placeholder="">
                         <mat-error>add valid first name</mat-error>
                     </mat-form-field>
                     <mat-form-field appearance="outline" fxFlex="100">
                         <mat-label>Last Name</mat-label>
-                        <input matInput placeholder="">
+                        <input matInput formControlName="lastName" placeholder="">
                         <mat-error>add valid last name</mat-error>
                     </mat-form-field>
                 </div>
                 <div fxLayout="column" fxLayoutAlign="centre">
                     <mat-form-field appearance="outline" fxFlex="100">
                         <mat-label>Email</mat-label>
-                        <input matInput placeholder="">
+                        <input matInput formControlName="email" placeholder="">
                         <mat-error>add valid email</mat-error>
                         <mat-hint style="font-size: 15px;">You can use letters,numbers & periods</mat-hint>
                         
@@ -39,12 +39,12 @@
                 <div fxLayoutGap="20px" fxLayout="row"fxLayout.xs="column">
                     <mat-form-field appearance="outline" fxFlex="100">
                         <mat-label>Password</mat-label>
-                        <input type="password" matInput placeholder="">
+                        <input  formControlName="password" type="password" matInput placeholder="">
                         <mat-error>add valid passward</mat-error>
                     </mat-form-field>
                     <mat-form-field appearance="outline" fxFlex="100">
                         <mat-label>Confirm</mat-label>
-                        <input type="password" matInput placeholder="">
+                        <input formControlName="confirmPassword" type="password" matInput placeholder="">
                         <mat-error>add valid confirm passward</mat-error>
                     </mat-form-field>
                 </div>
