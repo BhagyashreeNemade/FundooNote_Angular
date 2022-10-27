@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UserserviceService } from 'src/app/services/userService/userservice.service';
 
 @Component({
   selector: 'app-register',
@@ -8,11 +9,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class RegisterComponent implements OnInit {
   registerForm!: FormGroup;
-  submitted= false;
+  submitted = false;
+  
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder,private user:UserserviceService) { }
 
-  ngOnInit(): void {
+  ngOnInit(){
     this.registerForm = this.formBuilder.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
@@ -21,13 +23,27 @@ export class RegisterComponent implements OnInit {
       confirmPassword: ['', Validators.required]
     });
   }
-  onSubmit(){
+  onSubmit() {
     this.submitted = true;
-    if (this.registerForm.invalid) {
-      return;
-  }
+    console.log("valid data",this.registerForm.value);
+    console.log("do api call");
 
+    if (this.registerForm.valid) {
+      let reqdata = {
+        firstname: this.registerForm.value.firstName,
+        lastname: this.registerForm.value.lastName,
+        emailId: this.registerForm.value.email,
+        password: this.registerForm.value.password,
+        service:"advanced"
+      }
+      this.user.registration(reqdata).subscribe((Response: any) => {
+        console.log(Response);
+      })
+    }
+    else{
+      console.log("invalid data",this.registerForm.value);
+      console.log("no api call");
+    }
   }
-   
-
 }
+
