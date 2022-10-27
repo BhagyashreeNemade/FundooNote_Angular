@@ -10,7 +10,7 @@ import { UserserviceService } from 'src/app/services/userService/userservice.ser
 export class RegisterComponent implements OnInit {
   registerForm!: FormGroup;
   submitted = false;
-  
+  public showPassword: boolean = false;
 
   constructor(private formBuilder: FormBuilder,private user:UserserviceService) { }
 
@@ -22,6 +22,9 @@ export class RegisterComponent implements OnInit {
       password: ['', [Validators.required, Validators.minLength(6)]],
       confirmPassword: ['', Validators.required]
     });
+  }
+   public togglePasswordVisibility(): void {
+    this.showPassword = !this.showPassword;
   }
   onSubmit() {
     this.submitted = true;
