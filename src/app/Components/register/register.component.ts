@@ -28,16 +28,16 @@ export class RegisterComponent implements OnInit {
   }
   onSubmit() {
     this.submitted = true;
-    console.log("valid data",this.registerForm.value);
-    console.log("do api call");
+    
 
     if (this.registerForm.valid) {
+      console.log("valid data",this.registerForm.value);
+    console.log("do api call");
       let reqdata = {
         firstname: this.registerForm.value.firstName,
         lastname: this.registerForm.value.lastName,
         emailId: this.registerForm.value.email,
-        password: this.registerForm.value.password,
-        service:"advanced"
+        password: this.registerForm.value.password
       }
       this.user.registration(reqdata).subscribe((Response: any) => {
         console.log(Response);
