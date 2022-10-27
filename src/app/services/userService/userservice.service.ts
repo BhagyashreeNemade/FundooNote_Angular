@@ -26,3 +26,14 @@ login(reqdata:any){
   }
   return this.http.postService('https://localhost:44368/api/User/Login',reqdata,false,header)
 }
+forgotpassword(reqdata:any){
+  let header={
+    headers:new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization':'token'
+    })
+  }
+  return this.http.postService('https://localhost:44368/api/User/ForgetPassword?email=bhagunemade2902%40gmail.com',reqdata,false,header)
+}
+
+}
