@@ -16,6 +16,17 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
+import { ArchieveComponent } from './Components/archieve/archieve.component';
+import { CreateNoteComponent } from './Components/create-note/create-note.component';
+import { DisplayNotesComponent } from './Components/display-notes/display-notes.component';
+import { GetallnotesComponent } from './Components/getallnotes/getallnotes.component';
+import { GettrashComponent } from './Components/gettrash/gettrash.component';
+import { MydashboardComponent } from './Components/mydashboard/mydashboard.component';
+import { NoteIconComponent } from './Components/note-icon/note-icon.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatListModule} from '@angular/material/list';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -23,7 +34,14 @@ import {MatIconModule} from '@angular/material/icon';
     RegisterComponent,
     LoginComponent,
     ForgetPasswordComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    ArchieveComponent,
+    CreateNoteComponent,
+    DisplayNotesComponent,
+    GetallnotesComponent,
+    GettrashComponent,
+    MydashboardComponent,
+    NoteIconComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +52,12 @@ import {MatIconModule} from '@angular/material/icon';
     MatCheckboxModule,
     FlexLayoutModule,FormsModule,ReactiveFormsModule,
     HttpClientModule,
-    MatIconModule
+    MatIconModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatListModule,
+    MatButtonModule,
+    MatCardModule
 
     
 
