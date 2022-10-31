@@ -23,5 +23,14 @@ export class NoteServiceService {
     return this.httpService.postService('https://localhost:44368/api/Note/Add', reqdata, true, header)
  
   }
- 
+  getNotes() {
+    console.log(this.token);
+    let header = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'Authorization': 'Bearer ' + this.token
+      })
+    }
+    return this.httpService.getService('https://localhost:44368/api/Note/Get', true, header)
+  }
 }
