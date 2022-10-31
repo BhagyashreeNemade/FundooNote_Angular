@@ -6,6 +6,7 @@ import { HttpService } from '../httpservice/http.service';
   providedIn: 'root'
 })
 export class NoteServiceService {
+  token:any;
 
   
   constructor() {

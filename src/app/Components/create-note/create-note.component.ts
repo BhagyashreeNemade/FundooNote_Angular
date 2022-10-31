@@ -28,7 +28,6 @@ export class CreateNoteComponent implements OnInit {
         note: this.createnoteForm.value.description
 
       }
-      
     }
   }
 }

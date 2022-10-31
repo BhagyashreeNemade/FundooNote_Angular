@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit {
       }
       this.user.login(reqdata).subscribe((Response: any) => {
         console.log(Response);
+        localStorage.setItem("token", Response.token);
       })
     }
     else{
