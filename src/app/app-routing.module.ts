@@ -10,6 +10,7 @@ import { GettrashComponent } from './Components/gettrash/gettrash.component';
 import { MydashboardComponent } from './Components/mydashboard/mydashboard.component';
 import { CreateNoteComponent } from './Components/create-note/create-note.component';
 import { NoteIconComponent } from './Components/note-icon/note-icon.component';
+import { DisplayNotesComponent } from './Components/display-notes/display-notes.component';
 
 const routes: Routes = [
   { path: 'registration', component: RegisterComponent },
@@ -18,7 +19,7 @@ const routes: Routes = [
   { path: 'reset-password', component: ResetPasswordComponent },
   { path: 'createnote', component: CreateNoteComponent},
   { path: 'noteicon', component: NoteIconComponent},
-  { path: 'getallnotes', component: GetallnotesComponent },
+  {path: 'display-notes', component: DisplayNotesComponent },
   { path: 'mydashboard', component: MydashboardComponent ,
   
     children: [

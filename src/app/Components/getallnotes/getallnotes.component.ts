@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./getallnotes.component.scss']
 })
 export class GetallnotesComponent implements OnInit {
+  
 
   constructor() { }
 
   ngOnInit(): void {
+    
   }
-
+ 
 }
+

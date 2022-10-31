@@ -20,8 +20,7 @@ registration(reqdata:any){
 login(reqdata:any){
   let header={
     headers:new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Authorization':'token'
+      'Content-Type': 'application/json'
     })
   }
   return this.http.postService('https://localhost:44368/api/User/Login',reqdata,false,header)
@@ -29,8 +28,7 @@ login(reqdata:any){
 forgotpassword(reqdata:any){
   let header={
     headers:new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Authorization':'token'
+      'Content-Type': 'application/json'
     })
   }
   return this.http.postService('https://localhost:44368/api/User/ForgetPassword?email=bhagunemade2902%40gmail.com',reqdata,false,header)

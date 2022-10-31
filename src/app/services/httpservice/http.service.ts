@@ -13,4 +13,6 @@ postService(url: string,reqdata:any, token: boolean= false, httpOptions: any ){
   return this.httpClient.post(url,reqdata,token && httpOptions)
 
 }
+
 }
+
