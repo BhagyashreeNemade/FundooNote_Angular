@@ -9,8 +9,19 @@ export class NoteServiceService {
   token:any;
 
   
-  constructor() {
-
+  constructor(private httpService: HttpService) {
+    this.token = localStorage.getItem("token")
   }
-  
+  addnote(reqdata: any) {
+    console.log(reqdata);
+    let header = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'Authorization': 'Bearer ' + this.token
+      })
+    }
+    return this.httpService.postService('https://localhost:44368/api/Note/Add', reqdata, true, header)
+ 
+  }
+ 
 }

@@ -28,6 +28,9 @@ export class CreateNoteComponent implements OnInit {
         note: this.createnoteForm.value.description
 
       }
+      this.note.addnote(reqdata).subscribe((Response: any) => {
+        console.log(Response);
+      });
     }
   }
 }
