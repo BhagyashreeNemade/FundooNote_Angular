@@ -9,6 +9,7 @@ import { NoteServiceService } from 'src/app/services/Note-service/note-service.s
 export class GetallnotesComponent implements OnInit {
 
   getNotes: any;
+  noteArray: any;
 
   constructor(private note: NoteServiceService) { }
 
@@ -17,14 +18,14 @@ export class GetallnotesComponent implements OnInit {
   }
   getAllNote() {
     this.note.getNotes().subscribe((response: any) => {
-      console.log(response);
-      this.getNotes = response.getNotes
+      console.log(response.data);
+      this.noteArray = response.data;
     })
 
   }
-  receiveMessage(e: any) {
-    this.getNotes()
-    console.log(e)
+  receiveMessage($event: any) {
+    console.log($event);
+    this.getAllNote();
   }
 }
 

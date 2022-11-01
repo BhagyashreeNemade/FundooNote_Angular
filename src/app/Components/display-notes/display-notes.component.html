@@ -1,9 +1,20 @@
-<mat-card class="example-card" style="width:250px;max-height:500px;margin-top: 50px; background-color: azure;">
-    <mat-card-title>Title</mat-card-title>
-    <mat-card-content>
-      <p>Description</p>
-      
-    </mat-card-content>
-    <app-note-icon></app-note-icon>
-  </mat-card>
+<div fxLayout="row" fxLayout="row wrap">
+  <mat-card *ngFor="let noteArray of GetNote"
+      style="width:180px;max-height:500px;background-color:aqua;margin-top: 20px; margin-left: 10px;">
+      <div>
+          <div fxLayout="row" fxLayoutAlign="space-between" class="add-note-input" (click)="openDialog(noteArray)">
+              {{noteArray.title}}
+              <img style="width: 16px;" class="img" src="../../../assets/pin.png">
+          </div> <br>
+          <div (click)="openDialog(noteArray)" style="margin-bottom: 10px; padding-bottom: 5px;">
+              {{noteArray.note}}
+          </div>
+      </div>
 
+      <div>
+          <div>
+              <app-note-icon></app-note-icon>
+          </div>
+      </div>
+  </mat-card>
+</div>

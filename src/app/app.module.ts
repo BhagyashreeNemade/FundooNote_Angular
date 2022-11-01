@@ -27,6 +27,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatListModule} from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
+import { UpdateComponent } from './Components/update/update.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,8 @@ import {MatCardModule} from '@angular/material/card';
     GetallnotesComponent,
     GettrashComponent,
     MydashboardComponent,
-    NoteIconComponent
+    NoteIconComponent,
+    UpdateComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +60,8 @@ import {MatCardModule} from '@angular/material/card';
     MatToolbarModule,
     MatListModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    MatDialogModule
 
     
 

@@ -7,6 +7,7 @@ import { HttpService } from '../httpservice/http.service';
 })
 export class NoteServiceService {
   token:any;
+  noteid: any;
 
   
   constructor(private httpService: HttpService) {
@@ -32,5 +33,18 @@ export class NoteServiceService {
       })
     }
     return this.httpService.getService('https://localhost:44368/api/Note/Get', true, header)
+  }
+  updateNote(reqdata: any,noteid:any) {
+    console.log(reqdata);
+    console.log(this.token);
+    console.log(this.noteid)
+
+    let header = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'Authorization':'Bearer ' + this.token
+      })
+    }
+    return this.httpService.putService(`https://localhost:44368/api/Note/Update/${noteid}`, reqdata, true, header)
   }
 }

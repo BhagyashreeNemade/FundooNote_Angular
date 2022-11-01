@@ -3,16 +3,16 @@
       style="width:600px; background-color:rgb(255, 255, 255); border-radius: 5px; box-shadow: 1px 3px 3px 3px #aaaaaa">
       <form [formGroup]="createnoteForm" (ngSubmit)="onSubmit()">
         <div style="height: 25px; padding: 10px 15px; font-size: medium;" >
-  
+          
           <input type="text" #txt class="input"  formControlName="title" placeholder="Title">
-  
+          <img style="width: 16px; margin-left: 30px;" class="img" src="../../../assets/pin.png">
         </div>
         <div style="height: 30px; margin-bottom: 10px; padding: 10px 15px; font-size: small;">
           <input type="text" #txt class="input" formControlName="description" placeholder="Take a note...">
         </div>
         <div style="height: 35px;"  fxLayout="row" fxLayoutAlign="space-between center">
-          <div fxLayout="row">
-            <app-note-icon></app-note-icon>
+          <div fxLayout="row" style="padding-left: 20px;">
+            <app-note-icon ></app-note-icon>
           </div>
           <div >
             <button mat-button class="closebutton">Close</button>

@@ -11,6 +11,7 @@ import { MydashboardComponent } from './Components/mydashboard/mydashboard.compo
 import { CreateNoteComponent } from './Components/create-note/create-note.component';
 import { NoteIconComponent } from './Components/note-icon/note-icon.component';
 import { DisplayNotesComponent } from './Components/display-notes/display-notes.component';
+import { UpdateComponent } from './Components/update/update.component';
 
 const routes: Routes = [
   { path: 'registration', component: RegisterComponent },
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'createnote', component: CreateNoteComponent},
   { path: 'noteicon', component: NoteIconComponent},
   {path: 'display-notes', component: DisplayNotesComponent },
+  {path: 'update-notes', component: UpdateComponent },
   { path: 'mydashboard', component: MydashboardComponent ,
   
     children: [
