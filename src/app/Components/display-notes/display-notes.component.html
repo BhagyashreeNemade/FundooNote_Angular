@@ -1,12 +1,11 @@
 <div fxLayout="row" fxLayout="row wrap">
-  <mat-card *ngFor="let noteArray of GetNote"
-      style="width:130px;max-height:500px;margin-top: 20px; margin-left: 10px;">
+  <mat-card *ngFor="let noteArray of GetNote">
       <div>
           <div fxLayout="row" fxLayoutAlign="space-between" class="add-note-input" (click)="openDialog(noteArray)">
               {{noteArray.title}}
-              <img style="width: 16px;" class="img" src="../../../assets/pin.png">
+              <img class="img" src="../../../assets/pin.png">
           </div> <br>
-          <div (click)="openDialog(noteArray)" style="margin-bottom: 10px; padding-bottom: 5px;">
+          <div class="desc-class" (click)="openDialog(noteArray)">
               {{noteArray.note}}
           </div>
       </div>
