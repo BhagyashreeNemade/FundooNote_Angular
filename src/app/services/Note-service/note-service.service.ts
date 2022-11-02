@@ -35,7 +35,7 @@ export class NoteServiceService {
     return this.httpService.getService('https://localhost:44368/api/Note/Get', true, header)
   }
   updateNote(reqdata: any,noteID:any) {
-    console.log(reqdata);
+    console.log("hello",reqdata);
     console.log(this.token);
 
     let header = {
@@ -45,5 +45,17 @@ export class NoteServiceService {
       })
     }
     return this.httpService.putService('https://localhost:44368/api/Note/Update?noteid='+noteID, reqdata, true, header)
+  }
+  arcieveNote(reqdata: any) {
+    console.log("fere",reqdata);
+    console.log(this.token);
+
+    let header = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'Authorization':'Bearer ' + this.token
+      })
+    }
+    return this.httpService.putService(`https://localhost:44368/api/Note/Archive?noteid=${reqdata.noteID}`, reqdata, true, header)
   }
 }

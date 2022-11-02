@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { NoteServiceService } from 'src/app/services/Note-service/note-service.service';
 
 @Component({
   selector: 'app-note-icon',
@@ -6,10 +7,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./note-icon.component.scss']
 })
 export class NoteIconComponent implements OnInit {
+  @Input() noteCard: any;
+  noteID: any;
+  isArchieve:boolean=false;
 
-  constructor() { }
+  constructor(private note:NoteServiceService) { }
 
   ngOnInit(): void {
   }
+  onArchiev(){
+    let reqdata ={ 
+      noteID:[this.noteCard.noteID]
 
+    }
+    console.log(reqdata);
+    this.note.arcieveNote(reqdata).subscribe((Response: any) => {
+      console.log(Response);
+    })
+
+  }
+  
 }
