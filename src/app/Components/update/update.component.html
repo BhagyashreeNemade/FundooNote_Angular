@@ -1,15 +1,15 @@
-<div>
-    <div class="title"  fxLayout="row" fxLayoutAlign="space-between">
-        <input [(ngModel)]="title" type="txt" placeholder="Title" [(ngModel)]="title">
-        <img class="img-pin"  class="img" src="../../../assets/pin.png">
+<div class="note">
+    <div class="title" fxLayout="row" fxLayoutAlign="space-between">
+        <input type="text" placeholder="Title"  [(ngModel)]="title">
+        <img class="img-pin" class="img" src="../../../assets/pin.png">
     </div>
-    <div class="desc" >
-        <input [ngModel]="description" type="txt" placeholder="take a note" [(ngModel)]="description">
+    <div class="desc">
+        <input placeholder="take a note" type="text" [(ngModel)]="description">
     </div>
-    <div class="icon-bar"  fxLayout="row" fxLayoutAlign="space-between center">
+    <div class="icon-bar" fxLayout="row" fxLayoutAlign="space-between center">
 
         <app-note-icon></app-note-icon>
-        <button mat-button class="closebutton">Close</button>
+        <button mat-button (click)="onNoClick()" class="closebutton">Close</button>
 
     </div>
 </div>
