@@ -29,4 +29,28 @@
        `<body>` to be our scrolling element for mobile layouts. */
     flex: 1 0 auto;
   }
+  .example-toolbar{
+    background-color: rgb(255, 255, 255);border :0.2px solid rgb(201, 201, 201);
+  }
+  .icon-img{
+    width: 40px; margin-left:8px; padding-right: 30px;
+  }
+  .search-btn{
+    height:48px;width:0px;border:none;;border-radius: 5px;border-color: white; background-color: rgb(249, 252, 255);
+  }
+  .searchbox{
+    height:48px; width:370px; border:none; border-radius: 2px; font-size:medium;;border-radius: 5px; box-shadow: 1px 2px 2px 2px #aaaaaa; background-color: rgb(251, 253, 255);
+  }
+  .img{
+    width: 24px; margin-left:8px; padding-right: 20px;
+  }
+  .img1{
+    width: 30px;
+  }
+  .icon-class{
+    padding-right:20px;
+  }
+  .archieve-class{
+    padding-right:20px; width: 24px;
+  }
   
