@@ -7,3 +7,24 @@
     outline: none;
     background-color:rgb(252, 252, 252)
   }
+  .shadow{
+    margin-top: 30px; margin-left: 100px; 
+  }
+  .box{
+    width:550px; background-color:rgb(255, 255, 255); border-radius: 5px; box-shadow: 1px 3px 3px 3px #aaaaaa;
+  }
+  .title-class{
+    height: 25px; padding: 10px 15px; font-size: medium;
+  }
+  .img{
+    width: 16px; margin-left: 30px;
+  }
+  .desc-class{
+    height: 30px; margin-bottom: 10px; padding: 10px 15px; font-size: small;
+  }
+  .icon-container{
+    height: 35px;
+  }
+  .sub-icon-container{
+    padding-left: 20px;
+  }

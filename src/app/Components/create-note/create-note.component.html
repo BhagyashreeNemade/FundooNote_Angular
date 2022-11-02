@@ -1,17 +1,16 @@
-<div class="shadow" fxLayoutAlign="center center" style="margin-top: 30px; margin-left: 100px; ">
-    <div
-      style="width:600px; background-color:rgb(255, 255, 255); border-radius: 5px; box-shadow: 1px 3px 3px 3px #aaaaaa">
+<div class="shadow" fxLayoutAlign="center center">
+    <div class="box">
       <form [formGroup]="createnoteForm" (ngSubmit)="onSubmit()">
-        <div style="height: 25px; padding: 10px 15px; font-size: medium;" >
+        <div class ="title-class">
           
           <input type="text" #txt class="input"  formControlName="title" placeholder="Title">
-          <img style="width: 16px; margin-left: 30px;" class="img" src="../../../assets/pin.png">
+          <img class="img" src="../../../assets/pin.png">
         </div>
-        <div style="height: 30px; margin-bottom: 10px; padding: 10px 15px; font-size: small;">
+        <div class="desc-class">
           <input type="text" #txt class="input" formControlName="description" placeholder="Take a note...">
         </div>
-        <div style="height: 35px;"  fxLayout="row" fxLayoutAlign="space-between center">
-          <div fxLayout="row" style="padding-left: 20px;">
+        <div class="icon-container" fxLayout="row" fxLayoutAlign="space-between center">
+          <div class="sub-icon-container" fxLayout="row">
             <app-note-icon ></app-note-icon>
           </div>
           <div >
@@ -21,4 +20,3 @@
       </form>
     </div>
   </div>
-  <!-- style="position: right; padding-left: 200px;padding-top: -60px; margin-left: 300px;" -->

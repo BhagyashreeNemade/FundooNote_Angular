@@ -1,6 +1,6 @@
 <div fxLayout="row" fxLayout="row wrap">
   <mat-card *ngFor="let noteArray of GetNote"
-      style="width:180px;max-height:500px;background-color:aqua;margin-top: 20px; margin-left: 10px;">
+      style="width:130px;max-height:500px;margin-top: 20px; margin-left: 10px;">
       <div>
           <div fxLayout="row" fxLayoutAlign="space-between" class="add-note-input" (click)="openDialog(noteArray)">
               {{noteArray.title}}
