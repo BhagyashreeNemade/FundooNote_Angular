@@ -30,10 +30,10 @@
                         <mat-label>Email</mat-label>
                         <input matInput formControlName="email" placeholder="">
                         <mat-error>add valid email</mat-error>
-                        <mat-hint style="font-size: 15px;">You can use letters,numbers & periods</mat-hint>
+                        <mat-hint class="hint1">You can use letters,numbers & periods</mat-hint>
                         
                     </mat-form-field>
-                    <a style="color:#1a73e8;font-weight: 500;margin-top:7px;">  Use my current email address instead</a>
+                    <a class="a-class">  Use my current email address instead</a>
                 </div>
                 <div fxLayoutGap="20px" fxLayout="row"fxLayout.xs="column">
                     <mat-form-field appearance="outline" fxFlex="100">
@@ -47,22 +47,20 @@
                         <mat-error>add valid confirm passward</mat-error>
                     </mat-form-field>
                 </div>
-                <div style="font-size: small; margin-top:-10px">
-                    <mat-hint style="font: size 50px;">Use 8 or more characters with a mix of letters numbers & symbols
-                    </mat-hint>
-                </div>
-                <div class="checkbox-show-password" style="padding-top: 23px;">
+                 <mat-hint class="hint2" >Use 8 or more characters with a mix of letters numbers & symbols</mat-hint>
+                
+                <div class="checkbox-show-password" >
                     <mat-checkbox matSuffix (click)="togglePasswordVisibility()">Show Password</mat-checkbox>
                 </div>
                 <div class="submit-button" style="padding-top: 40px;">
-                    <button mat-stroked-button style=" font-weight: bold; border: none;color:#1a73e8;" routerLink="/login">Sign in instead</button>
-                    <button mat-raised-button style="background-color: #1a73e8;height:33px;width:80px;border-radius: 3px;font-size: 15px; text-align: center;color: white ;border: none; float: right;">Next</button>
+                    <button class="sign-btn" mat-stroked-button  routerLink="/login">Sign in instead</button>
+                    <button class="next-btn" mat-raised-button >Next</button>
                 </div>
             </div>
         </form>
-        <div fxLayout="column" fxLayoutAlign="center center" style=" margin-left: 15px;height: 400px;margin-top: 20px;" fxHide.xs>
+        <div class="side-container" fxLayout="column" fxLayoutAlign="center center"  fxHide.xs>
             <img src="../../../assets/account.svg" width="240" height="240">
-            <p style="font-size: 15px;font-weight: 300;text-align: center;box-sizing: inherit;">One Account.All
+            <p class="p-class" >One Account.All
                 FundooNote working for you</p>
         </div>
     </div>

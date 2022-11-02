@@ -1,5 +1,5 @@
 .main{
-    padding: 15px;
+    padding: 10px;
     border:2px solid #d5d1d1;
     margin: 10px  22%;
     border: radius 5px;
@@ -10,4 +10,28 @@
 }
 .main.row-main{
     padding: 8%;
+}
+.a-class{
+    color:#1a73e8;font-weight: 500;margin-top:7px;
+}
+.hint1{
+    font-size: 15px;
+}
+.hint2{
+    font-size: 13px;margin-top:-10px;
+}
+.checkbox-show-password{
+    padding-top: 23px;
+}
+.sign-btn{
+    font-weight: bold; border: none;color:#1a73e8;
+}
+.next-btn{
+    background-color: #1a73e8;height:33px;width:80px;border-radius: 3px;font-size: 15px; text-align: center;color: white ;border: none; float: right;
+}
+.side-container{
+     margin-left: 15px;height: 400px;margin-top: 20px;
+}
+.p-class{
+    font-size: 15px;font-weight: 300;text-align: center;box-sizing: inherit;
 }
