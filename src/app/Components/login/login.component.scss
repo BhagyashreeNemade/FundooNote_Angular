@@ -1,0 +1,36 @@
+.main{
+    padding: 30px;border:1px solid #d5d1d1;margin: 10px  20%;border: radius 2px;display:block;border-radius: 10px;
+}
+.row-main{
+    margin-bottom: -16px; padding-bottom:-20px;
+}
+.head{
+    text-align: center;
+}
+.email-class{
+    display: flex;width: 350px;
+}
+.pass-class{
+    display: flex;width: 350px;
+}
+.a-class{
+    margin-top: -10px; color: #1a73e8;padding-top: 5px;font-size: 14px;
+}
+.line1{
+    padding-top: 40px; font-size:medium;
+}
+.hint-class1{
+    font-size: 14px;
+}
+.hint-class2{
+    color: #1a73e8;font-size: 14px;
+}
+.button-layout{
+    justify-content: space-between; font-size: 30px;padding-left:-200px;padding-top: 80px;
+}
+.btn-acc{
+    border: none;color:rgb(54, 148, 224);font-size: medium;
+}
+.btn-next{
+    background-color: #1a73e8;height:33px;width:80px;border-radius: 3px;font-size: 15px; text-align: center;color: white ;border: none; float: right;
+}
