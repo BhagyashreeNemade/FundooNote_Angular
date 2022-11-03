@@ -9,7 +9,8 @@ import { NoteServiceService } from 'src/app/services/Note-service/note-service.s
 export class NoteIconComponent implements OnInit {
   @Input() noteCard: any;
   noteID: any;
-  isArchieve:boolean=false;
+  isArchive: boolean = false;
+  
 
   constructor(private note:NoteServiceService) { }
 
@@ -24,6 +25,7 @@ export class NoteIconComponent implements OnInit {
     this.note.arcieveNote(reqdata).subscribe((Response: any) => {
       console.log(Response);
     })
+    
 
   }
   

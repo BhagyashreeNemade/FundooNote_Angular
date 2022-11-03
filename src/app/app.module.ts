@@ -29,6 +29,7 @@ import {MatListModule} from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
 import { UpdateComponent } from './Components/update/update.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatListModule,
     MatButtonModule,
     MatCardModule,
-    MatDialogModule
+    MatDialogModule,
+    MatMenuModule
 
     
 

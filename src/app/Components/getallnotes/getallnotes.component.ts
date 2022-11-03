@@ -18,8 +18,11 @@ export class GetallnotesComponent implements OnInit {
   }
   getAllNote() {
     this.note.getNotes().subscribe((response: any) => {
-      console.log(response.data);
       this.noteArray = response.data;
+      this.noteArray= this.noteArray.filter((a:any)=>{
+        return a.isArchive==false;
+      })
+        console.log( this.noteArray);
     })
 
   }
