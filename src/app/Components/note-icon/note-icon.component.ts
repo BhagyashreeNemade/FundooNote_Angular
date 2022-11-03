@@ -10,23 +10,35 @@ export class NoteIconComponent implements OnInit {
   @Input() noteCard: any;
   noteID: any;
   isArchive: boolean = false;
-  
 
-  constructor(private note:NoteServiceService) { }
+
+  constructor(private note: NoteServiceService) { }
 
   ngOnInit(): void {
   }
-  onArchiev(){
-    let reqdata ={ 
-      noteID:[this.noteCard.noteID]
+  onArchiev() {
+    let reqdata = {
+      noteID: [this.noteCard.noteID]
 
     }
     console.log(reqdata);
     this.note.arcieveNote(reqdata).subscribe((Response: any) => {
       console.log(Response);
     })
-    
+  }
+  onTrash() {
+    let reqdata = {
+      noteID: [this.noteCard.noteID]
+    }
+
+    this.note.deleteNote(reqdata).subscribe((response: any) => {
+      console.log(response);
+
+    })
 
   }
-  
+
+
 }
+
+

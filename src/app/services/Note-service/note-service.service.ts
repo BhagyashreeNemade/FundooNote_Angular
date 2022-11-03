@@ -58,4 +58,18 @@ export class NoteServiceService {
     }
     return this.httpService.putService(`https://localhost:44368/api/Note/Archive?noteid=${reqdata.noteID}`, reqdata, true, header)
   }
+  deleteNote(reqdata: any) {
+    console.log(reqdata);
+    
+
+    let header = {
+      headers: new HttpHeaders({
+        
+        'Content-type': 'application/json',
+        'Authorization' : 'Bearer '+ this.token,
+
+      }),
+    };
+    return this.httpService.putService( `https://localhost:44368/api/Note/Trash?noteid=${reqdata.noteID}`, reqdata, true,header );
+  }
 }

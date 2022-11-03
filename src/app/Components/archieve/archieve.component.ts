@@ -14,7 +14,7 @@ export class ArchieveComponent implements OnInit {
   ngOnInit(): void {
     this.getarchieve()
   }
-  getarchieve() {    // Api integartion for api notes 
+  getarchieve() {  
     this.note.getNotes().subscribe(
       (response: any) => {
         this.noteArray = response.data;
