@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import{AuthguardGuard} from './authguard.guard';
 import { Routes, RouterModule } from '@angular/router';
 import { RegisterComponent } from './Components/register/register.component';
 import { LoginComponent } from './Components/login/login.component';
@@ -22,7 +23,7 @@ const routes: Routes = [
   { path: 'noteicon', component: NoteIconComponent},
   {path: 'display-notes', component: DisplayNotesComponent },
   {path: 'update-notes', component: UpdateComponent },
-  { path: 'mydashboard', component: MydashboardComponent ,
+  { path: 'mydashboard', component: MydashboardComponent ,canActivate:[AuthguardGuard],
   
     children: [
       { path: 'getallnotes', component: GetallnotesComponent },

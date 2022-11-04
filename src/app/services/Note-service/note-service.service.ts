@@ -80,6 +80,6 @@ export class NoteServiceService {
         'Authorization':'Bearer '+this.token
       })
     }
-    return this.httpService.postService(`https://localhost:44368/api/Note/Color?noteid=${reqdata.noteID}&color=${reqdata.color}`, reqdata, true, header)
+    return this.httpService.putService(`https://localhost:44368/api/Note/Color?noteid=${reqdata.noteID}&color=${reqdata.color}`, reqdata, true, header)
   }
 }

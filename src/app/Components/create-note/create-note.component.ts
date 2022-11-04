@@ -17,7 +17,9 @@ export class CreateNoteComponent implements OnInit {
   ngOnInit(): void {
     this.createnoteForm = this.formBuilder.group({
       title: ['', Validators.required],
-      description: ['', Validators.required]
+      description: ['', Validators.required],
+      color:" "
+      
     });
   }
   onSubmit() {
@@ -26,7 +28,8 @@ export class CreateNoteComponent implements OnInit {
     if (this.createnoteForm.valid) {
       let reqdata = {
         title: this.createnoteForm.value.title,
-        note: this.createnoteForm.value.description
+        note: this.createnoteForm.value.description,
+        color:this.createnoteForm.value.color
 
       }
       this.note.addnote(reqdata).subscribe((Response: any) => {

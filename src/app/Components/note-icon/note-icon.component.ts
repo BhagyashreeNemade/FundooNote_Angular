@@ -16,20 +16,16 @@ export class NoteIconComponent implements OnInit {
   noteID: any;
   isArchive: boolean = false;
   isTrash: boolean = false;
-  colour = [
-    { code: '#ffffff', name: 'white' },
-    { code: '#FF6347', name: 'red' },
-    { code: '#FF4500', name: 'orange' },
-    { code: '#FFFF00', name: 'yellow' },
-    { code: '#ADFF2F', name: 'green' },
-    { code: '#43C6DB', name: 'teal' },
-    { code: '#728FCE', name: 'Blue' },
-    { code: '#2B65EC', name: 'darkblue' },
-    { code: '#D16587', name: 'purple' },
-    { code: '#F9A7B0', name: 'pink' },
-    { code: '#E2A76F', name: 'brown' },
-    { code: '#D3D3D3', name: 'grey'}
-  ]
+  colorarray =[{Colorcode:"rgb(153, 0, 51)"},
+  {Colorcode:"rgb(102, 255, 102)"},
+  {Colorcode:"rgb(51, 102, 204)"},
+  {Colorcode:"rgb(0, 255, 255)"},{Colorcode:"rgb(255, 0, 255)"},
+  {Colorcode:"rgb(255, 51, 0)"},{Colorcode:"rgb(0, 51, 0)"},
+  {Colorcode:"rgb(255, 255, 0)"},{Colorcode:"rgb(255, 140, 26)"},
+  {Colorcode:"rgb(102, 204, 255)"},
+  {Colorcode:"rgb(38,30,238)"},
+  {Colorcode:"rgb(51, 153, 102)"}];
+  colorId: any;
 
 
 
@@ -55,7 +51,7 @@ export class NoteIconComponent implements OnInit {
     console.log(reqdata);
     this.note.arcieveNote(reqdata).subscribe((response: any) => {
       console.log(response);
-      this.changeNoteEvent.emit(response);
+      window.location.reload();
     })
   }
   onTrash() {
@@ -65,7 +61,7 @@ export class NoteIconComponent implements OnInit {
 
     this.note.deleteNote(reqdata).subscribe((response: any) => {
       console.log(response);
-      this.changeNoteEvent.emit(response);
+      window.location.reload();
 
     })
   }
@@ -75,7 +71,7 @@ export class NoteIconComponent implements OnInit {
 
     }
     this.note.arcieveNote(reqdata).subscribe((response: any) => {
-      console.log("note unarchieve",response);
+      console.log("note unarchieve", response);
       window.location.reload();
 
     })
@@ -86,14 +82,30 @@ export class NoteIconComponent implements OnInit {
       noteID: [this.noteCard.noteID]
     }
     this.note.deleteNote(reqdata).subscribe((response: any) => {
-      console.log("note restore",response);
+      console.log("note restore", response);
       window.location.reload();
 
     })
   }
-  
+  setColor(color: any) {
+    this.colorId = this.noteCard.color=color;
+    let reqData = {
+      color: color,
+      noteID: [this.noteCard.noteID]
+    };
+     
+    this.note.change_note_color(reqData).subscribe((response: any) => {
+      console.log(response);
+      this.changeNoteEvent.emit(response);
 
+      console.log(reqData)
+
+    })
+
+  }
 }
+
+
 
 
 

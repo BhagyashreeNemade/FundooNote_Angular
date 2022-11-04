@@ -1,23 +1,32 @@
-<div fxLayout="row" fxLayourAlign="center" >
+<div fxLayout="row" fxLayourAlign="center">
     <div>
         <img *ngIf="!isTrash" src="../../../assets/ghnti.png">
         <img *ngIf="!isTrash" src="../../../assets/collab.png">
-        <img *ngIf="!isTrash" mat-button src="../../../assets/color.png">
+        <img *ngIf="!isTrash" mat-button [matMenuTriggerFor]="color" src="../../../assets/color.png">
 
-  
+        <mat-menu #color="matMenu" yPosition="below">
+            <div class="rangila">
+                <div *ngFor="let color of colorarray">
+                    <button mat-mini-fab [style.background-color]="color?.Colorcode"
+                        (click)="setColor(color?.Colorcode)"></button>
+                </div>
+            </div>
+        </mat-menu>
+
+
 
         <img *ngIf="!isTrash" src="../../../assets/imgs.png">
 
-        <img  *ngIf="!isArchive && !isTrash" (click)="onArchiev()" src="../../../assets/Archieve.png" >
+        <img *ngIf="!isArchive && !isTrash" (click)="onArchiev()" src="../../../assets/Archieve.png">
         <img *ngIf="isArchive && !isTrash" src="../../../assets/Unarchieve.png" (click)="UnArchievenote()">
 
-    
+
 
 
     </div>
 
     <div>
-        <img  *ngIf="!isTrash" [matMenuTriggerFor]="menu" src="../../../assets/more.png">
+        <img *ngIf="!isTrash" [matMenuTriggerFor]="menu" src="../../../assets/more.png">
         <mat-menu #menu="matMenu">
             <button mat-menu-item (click)="onTrash()">Delete Note</button>
             <button mat-menu-item>Add Label</button>
@@ -28,15 +37,15 @@
 
     </div>
     <div *ngIf="isTrash" fxLayout="row" fxLayourAlign="center">
-        <div  matTooltip="Delete forever">
+        <div matTooltip="Delete forever">
             <img class="icons" src="../../../assets/Delete.png">
         </div>
 
-        <div class="buttons"  matTooltip="Restore">
+        <div class="buttons" matTooltip="Restore">
             <img class="icons" src="../../../assets/Restore.png" (click)="Restore()">
         </div>
 
     </div>
-   
+
 
 </div>

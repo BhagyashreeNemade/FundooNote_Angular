@@ -30,6 +30,7 @@ import {MatCardModule} from '@angular/material/card';
 import { UpdateComponent } from './Components/update/update.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatMenuModule} from '@angular/material/menu';
+import { AuthguardserviceService } from './services/AuthguardService/authguardservice.service';
 
 @NgModule({
   declarations: [
@@ -68,7 +69,7 @@ import {MatMenuModule} from '@angular/material/menu';
     
 
   ],
-  providers: [],
+  providers: [AuthguardserviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
