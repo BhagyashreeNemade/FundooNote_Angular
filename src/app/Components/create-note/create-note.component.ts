@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NoteServiceService } from 'src/app/services/Note-service/note-service.service';
 
@@ -8,6 +8,7 @@ import { NoteServiceService } from 'src/app/services/Note-service/note-service.s
   styleUrls: ['./create-note.component.scss']
 })
 export class CreateNoteComponent implements OnInit {
+  @Output() messageEvent = new EventEmitter<any>();
   createnoteForm!: FormGroup;
   submitted = false;
 
@@ -30,7 +31,9 @@ export class CreateNoteComponent implements OnInit {
       }
       this.note.addnote(reqdata).subscribe((Response: any) => {
         console.log(Response);
+        this.messageEvent.emit(Response)
       });
     }
+    this.createnoteForm.reset();
   }
 }

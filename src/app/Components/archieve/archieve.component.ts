@@ -7,22 +7,29 @@ import { NoteServiceService } from 'src/app/services/Note-service/note-service.s
   styleUrls: ['./archieve.component.scss']
 })
 export class ArchieveComponent implements OnInit {
-  noteArray: any;
+  NotesList: any;
 
   constructor(private note: NoteServiceService) { }
 
   ngOnInit(): void {
     this.getarchieve()
   }
-  getarchieve() {  
+  getarchieve() {
     this.note.getNotes().subscribe(
       (response: any) => {
-        this.noteArray = response.data;
-        this.noteArray = this.noteArray.filter((a: any) => {
+        console.log('Allnotes', response);
+        this.NotesList = response.data;
+        this.NotesList.reverse();
+        this.NotesList = this.NotesList.filter((a: any) => {
           return a.isArchive === true;
         })
-        console.log(this.noteArray);
+        console.log("Archive note list", this.NotesList);
+
+
       })
   }
-
+  updatedIcon(event: any) {
+    this.getarchieve();
+  }
 }
+

@@ -9,7 +9,8 @@ import { NoteServiceService } from 'src/app/services/Note-service/note-service.s
 export class GetallnotesComponent implements OnInit {
 
   getNotes: any;
-  noteArray: any;
+  NotesList: any;
+  
 
   constructor(private note: NoteServiceService) { }
 
@@ -18,16 +19,30 @@ export class GetallnotesComponent implements OnInit {
   }
   getAllNote() {
     this.note.getNotes().subscribe((response: any) => {
-      this.noteArray = response.data;
-      this.noteArray= this.noteArray.filter((a:any)=>{
+      console.log('Allnotes', response);
+      this.NotesList = response.data
+      this.NotesList.reverse();
+      this.NotesList= this.NotesList.filter((a:any)=>{
         return a.isArchive==false && a.isTrash==false;
       })
-        console.log( this.noteArray);
+      console.log(this.NotesList);
     })
 
   }
-  receiveMessage($event: any) {
+  receiveMessage($event:any){
     console.log($event);
+  this.getAllNote();
+  }
+  updatedIcon($event:any) {
+    console.log($event);
+    this.getAllNote();
+  }
+  receiveMessagearchive($event:any){
+    console.log($event);
+    this.getAllNote();
+  }
+  iconRefresh($event:any){
+    console.log($event)
     this.getAllNote();
   }
 }

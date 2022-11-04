@@ -72,4 +72,14 @@ export class NoteServiceService {
     };
     return this.httpService.putService( `https://localhost:44368/api/Note/Trash?noteid=${reqdata.noteID}`, reqdata, true,header );
   }
+  change_note_color(reqdata:any){
+    console.log(this.token);
+    let header={
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization':'Bearer '+this.token
+      })
+    }
+    return this.httpService.postService(`https://localhost:44368/api/Note/Color?noteid=${reqdata.noteID}&color=${reqdata.color}`, reqdata, true, header)
+  }
 }

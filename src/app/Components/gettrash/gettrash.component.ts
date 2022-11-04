@@ -7,7 +7,7 @@ import { NoteServiceService } from 'src/app/services/Note-service/note-service.s
   styleUrls: ['./gettrash.component.scss']
 })
 export class GettrashComponent implements OnInit {
-  noteArray: any;
+  NotesList: any;
 
   constructor(private note: NoteServiceService) { }
 
@@ -17,12 +17,18 @@ export class GettrashComponent implements OnInit {
   gettrash() {    // Api integartion for api notes 
     this.note.getNotes().subscribe(
       (response: any) => {
-        this.noteArray = response.data;
-        this.noteArray = this.noteArray.filter((a: any) => {
+        console.log('Allnotes',response);
+        this.NotesList=response.data
+        this.NotesList.reverse();
+        this.NotesList = this.NotesList.filter((a: any) => {
           return a.isTrash == true;
         })
-        console.log(this.noteArray);
+        console.log('Trashnotes',this.NotesList);
       })
   }
+  receiveMessage(event:any){
+    this.gettrash();
+    }
+
 
 }
