@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NoteServiceService } from 'src/app/services/Note-service/note-service.service';
 
@@ -11,6 +11,7 @@ export class CreateNoteComponent implements OnInit {
   @Output() messageEvent = new EventEmitter<any>();
   createnoteForm!: FormGroup;
   submitted = false;
+  
 
   constructor(private formBuilder: FormBuilder, private note: NoteServiceService) { }
 

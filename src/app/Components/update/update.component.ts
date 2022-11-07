@@ -12,6 +12,7 @@ export class UpdateComponent implements OnInit {
   title: any;
   description: any;
   noteID: any;
+  color:any;
 
 
   constructor(private notes: NoteServiceService,
@@ -25,6 +26,7 @@ export class UpdateComponent implements OnInit {
     this.title = this.data.title;
     this.description = this.data.note;
     this.noteID=this.data.noteID;
+    this.color=this.data.color;
 
 
   }
@@ -34,18 +36,23 @@ export class UpdateComponent implements OnInit {
     
     let reqdata ={ 
       title: this.title,
-      note: this.description
+      note: this.description,
+      color:this.color
 
     }
     this.notes.updateNote(reqdata, this.noteID).subscribe((Response: any) => {
       console.log(Response);
-      this.noteUpdated.emit(Response);
+      window.location.reload();
     });
     this.dialogRef.close();
     
   }
   Reload(event:any){
     console.log(event);
+  }
+  getcolornote(event:any){
+    console.log(event);
+    this.color=event;
   }
 
 }

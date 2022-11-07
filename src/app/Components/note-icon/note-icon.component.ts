@@ -12,11 +12,11 @@ import { GettrashComponent } from '../gettrash/gettrash.component';
 export class NoteIconComponent implements OnInit {
   @Input() noteCard: any;
   @Output() changeNoteEvent = new EventEmitter<string>();
-  @Output() displayicons = new EventEmitter<string>();
+ 
   noteID: any;
   isArchive: boolean = false;
   isTrash: boolean = false;
-  colorarray =[{Colorcode:"rgb(153, 0, 51)"},
+  colorarray =[{Colorcode:"green"},
   {Colorcode:"rgb(102, 255, 102)"},
   {Colorcode:"rgb(51, 102, 204)"},
   {Colorcode:"rgb(0, 255, 255)"},{Colorcode:"rgb(255, 0, 255)"},

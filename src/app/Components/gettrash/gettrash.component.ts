@@ -21,7 +21,7 @@ export class GettrashComponent implements OnInit {
         this.NotesList=response.data
         this.NotesList.reverse();
         this.NotesList = this.NotesList.filter((a: any) => {
-          return a.isTrash == true;
+          return a.isTrash == true && a.isArchive == false;
         })
         console.log('Trashnotes',this.NotesList);
       })

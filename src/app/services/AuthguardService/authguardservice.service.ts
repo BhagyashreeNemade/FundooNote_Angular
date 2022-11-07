@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable ,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'

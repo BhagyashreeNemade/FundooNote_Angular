@@ -1,15 +1,15 @@
-<div class="note">
+<div class="note" [style.background]="data.color">
     <div class="title" fxLayout="row" fxLayoutAlign="space-between">
-        <input type="text" placeholder="Title"  [(ngModel)]="title">
+        <input type="text" placeholder="Title"  [(ngModel)]="title" [style.background]="data.color">
         <img class="img-pin" class="img" src="../../../assets/pin.png">
     </div>
     <div class="desc">
-        <input placeholder="take a note" type="text" [(ngModel)]="description">
+        <input placeholder="take a note" type="text" [(ngModel)]="description" [style.background]="data.color">
     </div>
     <div class="icon-bar" fxLayout="row" fxLayoutAlign="space-between center">
 
-        <app-note-icon (autorefresh)="Reload($event)"></app-note-icon>
-        <button mat-button (click)="onNoClick()" class="closebutton">Close</button>
+        <app-note-icon [noteCard]="data" (colornote)="getcolornote($event)"></app-note-icon>
+        <button mat-button  (click)="onNoClick()" class="closebutton">Close</button>
 
     </div>
 </div>
